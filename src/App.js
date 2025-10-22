@@ -17,9 +17,10 @@ function App() {
 
   return (
     <div className="container">
-      {/* Left side — Add Task Form */}
+      {/* Left side - Add Task */}
       <div className="add-task">
         <h2>Add a Task</h2>
+
         <div className="form-group">
           <label>Title</label>
           <input
@@ -29,6 +30,7 @@ function App() {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
+
         <div className="form-group">
           <label>Description</label>
           <textarea
@@ -37,23 +39,28 @@ function App() {
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
-        <button onClick={handleAddTask}>Add</button>
+
+        <button onClick={handleAddTask}>Add Task</button>
       </div>
 
-      {/* Right side — Task List */}
+      {/* Right side - Task List */}
       <div className="task-list">
         <h2>Task List</h2>
         {tasks.length === 0 ? (
           <p className="empty">No tasks added yet.</p>
         ) : (
-          <ul>
+          <div className="task-container">
             {tasks.map((task, index) => (
-              <li key={index}>
-                <h3>{task.title}</h3>
-                <p>{task.description}</p>
-              </li>
+              <div className="task-card" key={index}>
+                <div className="task-header">
+                  <h3>{task.title}</h3>
+                </div>
+                <div className="task-body">
+                  <p>{task.description}</p>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         )}
       </div>
     </div>

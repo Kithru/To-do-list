@@ -9,10 +9,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        return Task::where('status', false) // Only uncompleted tasks
-                    ->orderBy('created_at', 'desc')
-                    ->take(5)
-                    ->get();
+        return Task::orderBy('created_at', 'desc')->take(5)->get();
     }
 
     // Add a new task

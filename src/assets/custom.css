@@ -1,9 +1,11 @@
+/* Global */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: #f4f6f8;
 }
 
+/* Container for Home page */
 .container {
   display: flex;
   justify-content: space-between;
@@ -133,6 +135,73 @@ button:hover {
   margin-top: 10px;
   color: #555;
   line-height: 1.5;
+}
+
+.task-card.completed {
+  background-color: #d4edda;
+  text-decoration: line-through;
+}
+
+/* Completed Tasks Button */
+.view-completed-btn {
+  padding: 10px 20px;
+  background-color: #d9534f; /* red */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.view-completed-btn:hover {
+  background-color: #c9302c;
+}
+
+/* Completed Tasks Page */
+.completed-tasks-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align from top */
+  min-height: 100vh;
+  padding: 40px 20px; /* Add some top padding */
+  background-color: #f4f6f8;
+}
+
+.completed-tasks-container {
+  width: 100%;
+  max-width: 900px; /* Increase width */
+  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Task cards inside completed tasks */
+.completed-tasks-container .task-card {
+  text-align: left;
+  border-left: 6px solid #28a745;
+  background-color: #e6ffe6;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+/* Back button styling */
+.back-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+  background-color: #0078d7;
+  transition: background-color 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #005fa3;
 }
 
 /* Responsive Design */

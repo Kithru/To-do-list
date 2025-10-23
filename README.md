@@ -7,7 +7,7 @@ Users can add, view, and manage their daily tasks efficiently with a clean and r
 
 ## 🚀 Features
 
-### 🖥️ Frontend (React)
+### 🖥️ Frontend (React.js)
 - Add new tasks with **Title** and **Description**
 - Display tasks in a user-friendly card layout
 - Responsive design for all screen sizes

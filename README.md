@@ -39,7 +39,6 @@ Users can efficiently add, view, update, and manage their daily tasks through a 
 
 ### 🧮 1️⃣ Backend (Laravel)
 
-```bash
 # Navigate to the backend folder
 cd backend
 
@@ -58,6 +57,7 @@ php artisan migrate
 # Start Laravel development server
 php artisan serve
 
+---
 
 ###  ⚛️ 2️⃣ Frontend (React.js)
 
@@ -70,6 +70,7 @@ npm install
 # Start React development server
 npm start
 
+---
 
 ### 📁 Folder Structure
 
@@ -90,11 +91,13 @@ project-root/
 │
 └── README.md
 
+---
 
 ### ▶️ Run the Project
 
 npm start
 
+---
 
 ## 📦 API Endpoints
 

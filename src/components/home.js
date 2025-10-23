@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 import "../assets/custom.css";
 
 function Home() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [tasks, setTasks] = useState([]);
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate(); 
 
   // Fetch all tasks
   const fetchTasks = () => {
@@ -50,68 +50,66 @@ function Home() {
 
   return (
     <div className="container">
-      {/* Add Task Section */}
+      {/* Left Side - Add Task Section */}
       <div className="add-task">
         <h2>Add a Task</h2>
+
         <div className="form-group">
           <label>Title</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            placeholder="Enter task title"
           />
         </div>
+
         <div className="form-group">
           <label>Description</label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            placeholder="Enter task description"
           ></textarea>
         </div>
+
         <button onClick={handleAddTask}>Add Task</button>
+
+        {/* View Completed Tasks Button (always visible) */}
+        <button
+          className="view-completed-btn"
+          onClick={() => navigate("/completed")}
+          style={{ marginTop: "15px" }}
+        >
+          View Completed Tasks
+        </button>
       </div>
 
-      {/* Recent 5 Tasks Section */}
+      {/* Right Side - Recent Tasks Section */}
       <div className="task-list">
-        <h2>Recent Tasks (5)</h2>
-        {tasks.length === 0 ? (
-          <p className="empty">No tasks added yet.</p>
+        <h2>Recent Tasks (Incomplete)</h2>
+        {tasks.filter((task) => task.status === 0).length === 0 ? (
+          <p className="empty">No incomplete tasks.</p>
         ) : (
           <div className="task-container">
-            {tasks.map((task) => (
-              <div
-                className={`task-card ${task.status ? "completed" : ""}`}
-                key={task.id}
-              >
-                <div className="task-header">
-                  <h3>{task.title}</h3>
-                  {!task.status && (
+            {tasks
+              .filter((task) => task.status === 0) // only incomplete tasks
+              .map((task) => (
+                <div className="task-card" key={task.id}>
+                  <div className="task-header">
+                    <h3>{task.title}</h3>
                     <button onClick={() => handleComplete(task.id)}>
                       Mark as Completed
                     </button>
-                  )}
+                  </div>
+                  <div className="task-body">
+                    <p>{task.description}</p>
+                  </div>
                 </div>
-                <div className="task-body">
-                  <p>{task.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         )}
       </div>
-
-      {/* Completed Tasks Button */}
-      {tasks.some((task) => task.status) && (
-        <div className="completed-tasks">
-          <h2>Completed Tasks</h2>
-          <button
-            className="view-completed-btn"
-            onClick={() => navigate("/completed")} // Use useNavigate here
-          >
-            View All Completed Tasks
-          </button>
-        </div>
-      )}
     </div>
   );
 }

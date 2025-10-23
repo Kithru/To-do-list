@@ -74,6 +74,7 @@ npm start
 
 ### 📁 Folder Structure
 
+```bash
 project-root/
 ├── backend/                 # Laravel Backend
 │   ├── app/
@@ -90,7 +91,7 @@ project-root/
 │   └── package.json
 │
 └── README.md
-
+```
 ---
 
 ### ▶️ Run the Project

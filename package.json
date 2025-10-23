@@ -14,7 +14,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
- "scripts": {
+  "scripts": {
     "start": "concurrently \"npm run react\" \"npm run laravel\"",
     "react": "react-scripts start",
     "laravel": "cd backend && php artisan serve --host=127.0.0.1 --port=8000",

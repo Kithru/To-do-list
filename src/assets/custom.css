@@ -210,3 +210,18 @@ button:hover {
     flex-direction: column;
   }
 }
+
+.completed-tasks-section {
+  margin-top: 30px;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9fbfd;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.completed-tasks-section h2 {
+  margin-bottom: 10px;
+  color: #0078d7;
+}
+

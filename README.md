@@ -112,4 +112,4 @@ npm start
 
 ## 👨‍💻 Author
 
-**Developed by:** Kithru VIduranga  
+**Developed by:** Kithru Viduranga  

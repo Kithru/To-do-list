@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; 
+import Swal from "sweetalert2";
 import "../assets/custom.css";
 
 function Home() {
@@ -22,7 +23,31 @@ function Home() {
 
   // Add new task
   const handleAddTask = () => {
-    if (title.trim() === "" || description.trim() === "") return;
+    if (title.trim() === "" && description.trim() === "") {
+      Swal.fire({
+        icon: "warning",
+        title: "Missing Fields",
+        text: "Please fill in both the title and description before adding a task!",
+        confirmButtonColor: "#007bff",
+      });
+      return;
+    } else if (title.trim() === "") {
+      Swal.fire({
+        icon: "warning",
+        title: "Missing Fields",
+        text: "Please fill the title before adding a task!",
+        confirmButtonColor: "#007bff",
+      });
+      return;
+    } else if (description.trim() === "") {
+      Swal.fire({
+        icon: "warning",
+        title: "Missing Fields",
+        text: "Please fill description before adding a task!",
+        confirmButtonColor: "#007bff",
+      });
+      return;
+    }
 
     fetch("/api/tasks", {
       method: "POST",
@@ -37,6 +62,13 @@ function Home() {
         setTitle("");
         setDescription("");
         fetchTasks();
+        Swal.fire({
+          icon: "success",
+          title: "Task Added!",
+          text: "Your task has been added successfully.",
+          timer: 1500,
+          showConfirmButton: false,
+        });
       })
       .catch((err) => console.error("Failed to add task:", err));
   };
@@ -44,7 +76,16 @@ function Home() {
   // Mark task as completed
   const handleComplete = (id) => {
     fetch(`/api/tasks/${id}/complete`, { method: "PATCH" })
-      .then(() => fetchTasks())
+      .then(() => {
+        fetchTasks();
+        Swal.fire({
+          icon: "success",
+          title: "Task Completed!",
+          text: "This task has been marked as completed.",
+          timer: 1500,
+          showConfirmButton: false,
+        });
+      })
       .catch((err) => console.error("Failed to complete task:", err));
   };
 
@@ -75,7 +116,7 @@ function Home() {
 
         <button onClick={handleAddTask}>Add Task</button>
 
-        {/* View Completed Tasks Button (always visible) */}
+        {/* View Completed Tasks Button */}
         <button
           className="view-completed-btn"
           onClick={() => navigate("/completed")}
@@ -93,7 +134,7 @@ function Home() {
         ) : (
           <div className="task-container">
             {tasks
-              .filter((task) => task.status === 0) // only incomplete tasks
+              .filter((task) => task.status === 0)
               .map((task) => (
                 <div className="task-card" key={task.id}>
                   <div className="task-header">

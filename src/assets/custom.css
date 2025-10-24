@@ -1,11 +1,10 @@
-/* Global */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: #f4f6f8;
 }
 
-/* Container for Home page */
+/* /////////////////////// home /////////////////////// */
 .container {
   display: flex;
   justify-content: space-between;
@@ -16,7 +15,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Left Side - Add Task */
+/* ////////////////////////////////////////////////////// */
 .add-task {
   flex: 1;
   background: white;
@@ -79,7 +78,7 @@ button:hover {
   transform: translateY(-1px);
 }
 
-/* Right Side - Task List */
+/* /////////////////////////////////////////////////////////////// */
 .task-list {
   flex: 1;
   background: white;
@@ -101,7 +100,7 @@ button:hover {
   margin-top: 20px;
 }
 
-/* Task Cards */
+/* /////////////////////////////////////////////////////// */
 .task-container {
   display: flex;
   flex-direction: column;
@@ -139,10 +138,9 @@ button:hover {
 
 .task-card.completed {
   background-color: #d4edda;
-  text-decoration: line-through;
 }
 
-/* Completed Tasks Button */
+/* ////////////////////////////////// */
 .view-completed-btn {
   padding: 10px 20px;
   background-color: #d9534f; /* red */
@@ -157,19 +155,19 @@ button:hover {
   background-color: #c9302c;
 }
 
-/* Completed Tasks Page */
+/* ///////////////////////////////////////////////// */
 .completed-tasks-page {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align from top */
+  align-items: flex-start;
   min-height: 100vh;
-  padding: 40px 20px; /* Add some top padding */
+  padding: 40px 20px;
   background-color: #f4f6f8;
 }
 
 .completed-tasks-container {
   width: 100%;
-  max-width: 900px; /* Increase width */
+  max-width: 900px;
   text-align: center;
   background-color: #fff;
   padding: 40px;
@@ -177,7 +175,7 @@ button:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Task cards inside completed tasks */
+/* ///////////////////////////////////////////*/
 .completed-tasks-container .task-card {
   text-align: left;
   border-left: 6px solid #28a745;
@@ -187,7 +185,56 @@ button:hover {
   border-radius: 8px;
 }
 
-/* Back button styling */
+/* ////////////////////////////////////////////////////// */
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.pagination li {
+  margin: 0 4px;
+}
+
+.pagination li a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  color: #333;
+  border-radius: 5px;
+  font-weight: 500;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.pagination li a:hover {
+  background-color: #0078d7;
+  color: white;
+  border-color: #0078d7;
+}
+
+/* Active page */
+.pagination li.active a {
+  background-color: #0078d7;
+  color: white;
+  border-color: #0078d7;
+  font-weight: 600;
+}
+
+/* Disabled state */
+.pagination li.disabled a {
+  pointer-events: none;
+  color: #aaa;
+  border-color: #ddd;
+  background-color: #f9f9f9;
+}
+
+
+/* /////////////////////////////////////////// */
 .back-btn {
   margin-top: 20px;
   padding: 12px 25px;
@@ -211,6 +258,7 @@ button:hover {
   }
 }
 
+/* Completed Tasks Section on Home */
 .completed-tasks-section {
   margin-top: 30px;
   padding: 20px;
@@ -225,3 +273,10 @@ button:hover {
   color: #0078d7;
 }
 
+
+.completed-time {
+  font-size: 13px;
+  color: #555;
+  margin-top: 5px;
+  font-style: italic;
+}

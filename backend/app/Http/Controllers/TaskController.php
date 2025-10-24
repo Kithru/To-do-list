@@ -9,7 +9,17 @@ class TaskController extends Controller
 {
     public function index()
     {
-        return Task::orderBy('created_at', 'desc')->take(5)->get();
+        return Task::where('status', 0)
+            ->orderBy('created_at', 'desc')
+            ->take(5)
+            ->get();
+    }
+
+    public function comtasks()
+    {
+        return Task::where('status', 1)
+                    ->orderBy('created_at', 'desc')
+                    ->get();
     }
 
     // Add a new task

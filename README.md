@@ -143,6 +143,9 @@ This project includes **unit and feature tests** for the Laravel backend (Task A
 ```bash
 php artisan test
 ```
+
+<img width="962" height="463" alt="image" src="https://github.com/user-attachments/assets/d9b963b0-133f-4657-a642-ee1dade678db" />
+
 ---
 
 ## 👨‍💻 Author

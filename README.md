@@ -38,6 +38,13 @@ Users can efficiently add, view, update, and manage their daily tasks through a 
 
 ## 🛠️ Installation (Using Docker)
 
+### 🧱 Prerequisites  
+Before starting, make sure you have the following installed on your system:
+- [Docker](https://www.docker.com/get-started)  
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+---
+
 ### 1️⃣ Clone the Repository
 
 ```bash

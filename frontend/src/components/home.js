@@ -11,7 +11,7 @@ function Home() {
 
   // Fetch all tasks
   const fetchTasks = () => {
-    fetch("/api/tasks")
+    fetch("http://localhost:8000/api/tasks")
       .then((res) => res.json())
       .then((data) => setTasks(data))
       .catch((err) => console.error("Failed to fetch tasks:", err));
@@ -49,7 +49,7 @@ function Home() {
       return;
     }
 
-    fetch("/api/tasks", {
+    fetch("http://localhost:8000/api/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +75,7 @@ function Home() {
 
   // Mark task as completed
   const handleComplete = (id) => {
-    fetch(`/api/tasks/${id}/complete`, { method: "PATCH" })
+    fetch(`http://localhost:8000/api/tasks/${id}/complete`, { method: "PATCH" })
       .then(() => {
         fetchTasks();
         Swal.fire({

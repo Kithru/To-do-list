@@ -9,14 +9,14 @@ Users can efficiently add, view, update, and manage their daily tasks through a 
 
 ### 🖥️ Frontend (React.js)
 - ➕ Add new tasks with **Title** and **Description**  
-- ✅ Mark tasks as **Completed** or **Incomplete**  
+- ✅ Mark tasks as **Completed**
 - 🔍 Filter tasks based on status  
 - ⚡ Real-time UI updates after task actions  
 - 💻 Fully responsive design  
 - 🧭 Smooth navigation with **React Router**
 
 ### ⚙️ Backend (Laravel)
-- 🧱 **RESTful API** for managing tasks (`GET`, `POST`, `PATCH`, `DELETE`)  
+- 🧱 **RESTful API** for managing tasks (`GET`, `POST`, `PATCH`)  
 - 🗄️ **MySQL database** integration  
 - 🌐 **CORS** enabled for frontend-backend communication  
 - 🔐 Input **validation** and **error handling**  

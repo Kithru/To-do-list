@@ -134,6 +134,17 @@ npm start
 
 ---
 
+## 🧪 Running Tests
+
+This project includes **unit and feature tests** for the Laravel backend (Task API).
+
+### 🧩 Run All Tests
+
+```bash
+php artisan test
+
+---
+
 ## 👨‍💻 Author
 
 **Developed by:** [Kithru Viduranga](https://github.com/Kithru)

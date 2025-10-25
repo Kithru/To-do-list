@@ -15,6 +15,7 @@ class TaskController extends Controller
             ->get();
     }
 
+    /////////////////////////////////////////////////////////////////////////////////
     public function comtasks()
     {
         return Task::where('status', 1)
@@ -22,7 +23,7 @@ class TaskController extends Controller
                     ->get();
     }
 
-    // Add a new task
+    ////////////////////////////////////////////////////////////////////////////////
     public function store(Request $request)
     {
 
@@ -39,7 +40,7 @@ class TaskController extends Controller
         return response()->json($task, 201);
     }
 
-
+    ////////////////////////////////////////////////////////////////////////////////
     public function complete($id)
     {
         $task = Task::findOrFail($id);

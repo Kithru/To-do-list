@@ -9,7 +9,7 @@ function CompletedTasks() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/com_tasks")
+    fetch("http://localhost:8000/api/com_tasks")
       .then((res) => res.json())
       .then((data) => {
         if (data.data) {

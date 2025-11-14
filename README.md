@@ -1,6 +1,6 @@
 # 📝 To-Do List Application
 
-A simple and elegant **To-Do List Web Application** built using **React.js (Frontend)** and **Laravel (Backend)**.  
+A simple and elegant **To-Do List Web Application** built using **React.js ( Frontend )** and **Laravel (Backend)**.  
 Users can efficiently add, view, update, and manage their daily tasks through a modern and responsive interface.
 
 ---

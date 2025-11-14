@@ -111,7 +111,7 @@ project-root/
 
 ---
 
-## ▶️ Local Development (Without Docker)
+## ▶️ Local Development ( Without Docker )
 
 If you want to run locally:
 
